@@ -1,9 +1,13 @@
-import { UserButton } from "@clerk/nextjs";
+"use client";
+
+import { Modal } from "@/components/ui/modal";
 
 const SetupPage = () => {
   return (
     <div>
-      <UserButton afterSignOutUrl="/" />
+      <Modal title="Title" description="Title description" isOpen onClose={() => { }}>
+        Children
+      </Modal>
     </div>
   );
 }
