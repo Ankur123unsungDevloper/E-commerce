@@ -11,7 +11,8 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel
+  FormLabel,
+  FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -31,7 +32,7 @@ export const StoreModal = () => {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values)
+    console.log(values);
   }
 
   return (
@@ -59,12 +60,13 @@ export const StoreModal = () => {
                         {...field}
                       />
                     </FormControl>
+                    <FormMessage />
                   </FormItem>
                 )}
               />
               <div className="pt-6 space-x-2 flex items-center justify-end w-full">
                 <Button variant="outline" onClick={storeModal.onClose}>Cancel</Button>
-                <Button>Continue</Button>
+                <Button type="submit">Continue</Button>
               </div>
             </form>
           </Form>
