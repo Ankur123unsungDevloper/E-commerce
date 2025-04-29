@@ -20,7 +20,7 @@ export default async function SetupLayout({
     }
   });
 
-  if (!store) {
+  if (store) {
     redirect(`/${store.id}`);
   }
 
