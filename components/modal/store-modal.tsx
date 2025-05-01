@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import * as z from "zod";
@@ -40,7 +41,7 @@ export const StoreModal = () => {
     try {
       setLoading(true);
 
-      const response = await axios.post('/api/store', values);
+      const response = await axios.post('/api/stores', values);
 
       window.location.assign(`/${response.data.id}`);
     } catch (error) {
@@ -71,6 +72,7 @@ export const StoreModal = () => {
                     </FormLabel>
                     <FormControl>
                       <Input
+                        disabled={loading}
                         placeholder="E-commerce"
                         {...field}
                       />
@@ -80,8 +82,16 @@ export const StoreModal = () => {
                 )}
               />
               <div className="pt-6 space-x-2 flex items-center justify-end w-full">
-                <Button variant="outline" onClick={storeModal.onClose}>Cancel</Button>
-                <Button type="submit">Continue</Button>
+                <Button
+                  disabled={loading}
+                  variant="outline"
+                  onClick={storeModal.onClose}
+                >
+                  Cancel
+                </Button>
+                <Button disabled={loading} type="submit">
+                  Continue
+                </Button>
               </div>
             </form>
           </Form>
