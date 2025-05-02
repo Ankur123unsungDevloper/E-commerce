@@ -6,7 +6,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
-import { toast } from "sonner";
+import { toast } from "react-hot-toast";
 
 import { useStoreModal } from "@/hooks/use-store-modal";
 import { Modal } from "@/components/ui/modal";
